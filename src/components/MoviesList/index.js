@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieItem from './components/MovieItem';
+import './styles.scss';
 
 const movies = {
   movie1: {

@@ -11,8 +11,8 @@ class MainPage extends Component {
     return (
       <React.Fragment>
         <Header />
-        {/* <SearchMovieBar />
         <MoviesList />
+        {/* <SearchMovieBar />
         <Footer /> */}
       </React.Fragment>
     )
