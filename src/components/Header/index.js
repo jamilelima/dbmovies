@@ -2,9 +2,15 @@ import React from 'react';
 import '../../styles/header.scss';
 
 const Header = () => (
-  <div className="header">
-    <h1>Cubos Challenge</h1>
-  </div>
+  <nav>
+    <div class="logo">
+      <h1>MOVIES DB</h1>
+    </div>
+    <div class="search">
+      <input class="search-input" placeholder="Search" />
+      <button class="fa fa-search search-button"></button>
+    </div>
+  </nav>
 )
 
 

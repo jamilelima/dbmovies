@@ -1,0 +1,41 @@
+$background-color: #EAEDF2;
+$bg-color: #5AEED1;
+$button-color: #FFF;
+$button-text-color: #fff;
+$search-height: 50px;
+$search-font-size: 14px;
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $bg-color
+}
+
+.search {
+  box-shadow: 0 20px 10px -10px rgba(200, 200, 200, .5);
+  display: inline-block;
+}
+
+.search-input {
+  border: 0;
+  outline: 0;
+  line-height: $search-height;
+  font-size: $search-font-size;
+  padding: 0 ($search-height - $search-font-size)/ 2;
+}
+
+.search-button {
+  color: $button-text-color;
+  background-color: #CCC;
+  width: $search-height;
+  line-height: $search-height;
+  text-align: center;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: 0;
+  transition: box-shadow .3s ease-out;
+}
