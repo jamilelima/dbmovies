@@ -1,28 +1,50 @@
 import React from 'react';
+import '../../styles/card.scss';
 
 const MovieDetailsCard = ({ props }) => (
-  <div className="card-container">
-    <div>
-      <img src="" alt="" />
-    </div>
+  <div className="movie-card">
 
-    <div>
-      <h1>Captain Marvel</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-      <p> Officia nihil vitae illo velit dolore corrupti dignissimos incidunt earum ipsa alias ullam neque dolor soluta ipsum libero, esse impedit perferendis atque! Officia nihil vitae illo velit dolore corrupti dignissimos incidunt earum ipsa alias ullam neque dolor soluta ipsum libero, esse impedit perferendis atque!</p>
+    <div className="wrapper">
 
-      <h3>Adventure, Science Fiction</h3>
-      <p>Production</p>
+      <a href="#">
+        <img src="https://bit.ly/2RI8rmp" alt="cover" className="cover" width="200" height="300" />
+      </a>
 
-      <div>
-        <div>Release: <span>2019-08-03</span></div>
-        <div>Box Office: <span>R$ 50.000,00</span></div>
-        <div>Running Time: <span>16 mins</span></div>
-        <div>Vote Average <span>7.5/10</span></div>
+      <div className="movie-main-info-container">
+
+        <div className="info">
+
+          <div className="movie-title">Captain Marvel</div>
+
+          <div className="movie-subtitle">Subtitle</div>
+
+        </div>
+
+      </div>
+
+      <div className="movie-description">
+
+        <div className="movie-genre">
+          <span className="genre">action</span>
+          <span className="genre">fantasy</span>
+          <span className="genre">adventure</span>
+        </div>
+
+        <div className="movie-details">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore impedit mollitia quod ratione assumenda explicabo esse autem odio repellat similique incidunt, minima laborum, dicta asperiores pariatur, quas expedita animi quos... <a href="#">read more</a>
+          </p>
+
+          <div className="more-options">
+            <a href="#" data-tooltip="Watch trailer" data-placement="top">
+              <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c545.png" width="30" height="20" alt="Watch trailer" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
+
+
 );
 
 export default MovieDetailsCard;
