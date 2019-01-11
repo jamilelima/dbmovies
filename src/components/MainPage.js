@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import SearchMovieBar from './SearchMovieBar';
-import MoviesList from './MoviesList';
 import Footer from './Footer';
+import MovieDetailsCard from './MovieDetailsCard';
 
 class MainPage extends Component {
 
@@ -11,7 +11,7 @@ class MainPage extends Component {
     return (
       <React.Fragment>
         <Header />
-        <MoviesList />
+        <MovieDetailsCard />
         {/* <SearchMovieBar />
         <Footer /> */}
       </React.Fragment>
