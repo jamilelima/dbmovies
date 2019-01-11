@@ -3,20 +3,21 @@
 
 a {
   text-decoration: none;
-  color: #5C7FB8; }
+  color: #211ed3; }
 
 a:hover {
   text-decoration: underline; }
 
 .movie-card {
-  font: 14px/22px "Lato", Arial, sans-serif;
+  font-family: 'Titillium Web', Arial, sans-serif;
+  font: 14px/22px;
   padding: 40px 0; }
 
 .wrapper {
   margin: 0 auto;
   width: 780px;
   height: 640px;
-  background: #CCC;
+  background-color: rgba(30, 27, 38, 0.6);
   border-radius: 5px;
   position: relative; }
 
@@ -40,8 +41,7 @@ a:hover {
   background: rgba(30, 27, 38, 0.8);
   z-index: -1;
   transform: skewY(-2.2deg);
-  transform-origin: 0 0;
-  -webkit-backface-visibility: hidden; }
+  transform-origin: 0 0; }
 
 .cover {
   position: absolute;
@@ -67,7 +67,7 @@ a:hover {
   height: 200px;
   font-size: 16px;
   line-height: 26px;
-  color: #15131f; }
+  color: #FFF; }
 
 .movie-genre {
   align-items: center;
@@ -80,6 +80,7 @@ a:hover {
 
 .genre {
   background: white;
+  color: #000;
   border-radius: 15px;
   padding: 3px 8px;
   font-size: 14px;
