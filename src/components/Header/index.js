@@ -22,7 +22,7 @@ class Header extends Component {
     }
   }
 
-  onChange = (event, { newValue }) => {
+  onChange = (event, { newValue, method }) => {
     this.setState({
       value: newValue,
     })
@@ -111,7 +111,6 @@ class Header extends Component {
         </div>
         <div className="search">
           <Autosuggest
-            // theme={theme}
             suggestions={suggestions}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionSelected={this.onSuggestionSelected}
