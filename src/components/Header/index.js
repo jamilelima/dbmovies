@@ -5,10 +5,11 @@ import { push } from 'react-router-redux';
 
 // HELPERS
 import Autosuggest from 'react-autosuggest';
-import { URL_SEARCH, API_KEY_ALT, URL_MOVIES_SEARCH } from '../../utils';
+import { API_KEY_ALT, URL_MOVIES_SEARCH } from '../../utils';
 
 // STYLES
 import '../../styles/header.scss';
+import '../../styles/search_theme.scss';
 
 
 class Header extends Component {
@@ -21,7 +22,7 @@ class Header extends Component {
     }
   }
 
-  onChange = ({ newValue }) => {
+  onChange = (event, { newValue }) => {
     this.setState({
       value: newValue,
     })
@@ -45,6 +46,7 @@ class Header extends Component {
   }
 
   onSuggestionsFetchRequested = ({ value }) => {
+    console.log({ value });
     const suggestionValue = value.trim(); // The trim() method removes whitespace from both sides of a string.
     if (suggestionValue.length > 0) {
       let url = `${URL_MOVIES_SEARCH}${suggestionValue}${API_KEY_ALT}`;
@@ -104,13 +106,12 @@ class Header extends Component {
 
     return (
       <nav>
-        <div class="logo">
+        <div className="logo">
           <h1>MOVIES DB</h1>
         </div>
-        <div class="search">
-          <input class="search-input" placeholder="Search" />
-          <button class="fa fa-search search-button"></button>
+        <div className="search">
           <Autosuggest
+            // theme={theme}
             suggestions={suggestions}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionSelected={this.onSuggestionSelected}
@@ -125,4 +126,4 @@ class Header extends Component {
 }
 
 
-export default connect()(Header);
+export default connect(null, null)(Header);
