@@ -1,46 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../../styles/card.scss';
 
-const MovieDetailsCard = ({ movieDetails }) => (
-  <div className="movie-card">
+class MovieDetailsCard extends Component {
+  render() {
+    const { title, overview, genres } = this.props.movieDetails.items;
 
-    <div className="wrapper">
+    return (
+      <div className="movie-card">
 
-      <a href="#">
-        <img src="https://bit.ly/2RI8rmp" alt="cover" className="cover" width="200" height="300" />
-      </a>
+        <div className="wrapper">
 
-      <div className="movie-main-info-container">
+          <a href="#">
+            <img src="https://bit.ly/2RI8rmp" alt="cover" className="cover" width="200" height="300" />
+          </a>
 
-        <div className="info">
+          <div className="movie-main-info-container">
 
-          <div className="movie-title">{movieDetails.items.title}</div>
+            <div className="info">
 
-        </div>
+              <div className="movie-title">{title}</div>
 
-      </div>
+            </div>
 
-      <div className="movie-description">
+          </div>
 
-        <div className="movie-genre">
-          <span className="genre">action</span>
-          <span className="genre">fantasy</span>
-          <span className="genre">adventure</span>
-        </div>
+          <div className="movie-description">
 
-        <div className="movie-details">
-          <p>{movieDetails.items.overview}<a href="#"> read more </a>
-          </p>
+            <div className="movie-genre">
+              <span className="genre">action</span>
+              <span className="genre">fantasy</span>
+              <span className="genre">adventure</span>
+            </div>
 
-          <div className="more-options">
-            <a href="#" data-tooltip="Watch trailer" data-placement="top">
-              <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c545.png" width="30" height="20" alt="Watch trailer" />
-            </a>
+            <div className="movie-details">
+              <p>{overview}<a href="#"> read more </a>
+              </p>
+
+              <div className="more-options">
+                <a href="#" data-tooltip="Watch trailer" data-placement="top">
+                  <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c545.png" width="30" height="20" alt="Watch trailer" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+
+    )
+  }
+}
 
 export default MovieDetailsCard;
