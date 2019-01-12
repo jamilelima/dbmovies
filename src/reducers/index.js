@@ -33,15 +33,19 @@ const movieDetails = (state = INITIAL_STATE, action) => {
     case GET_MOVIE:
       return Object.assign({}, state, {
         isLoading: true,
+        items: [],
+        error: null,
       });
     case GET_MOVIE_SUCCESS:
       return Object.assign({}, state, {
         isLoading: false,
-        error: action.data,
+        items: action.data,
+        error: false,
       });
     case GET_MOVIE_FAILURE:
       return Object.assign({}, state, {
         isLoading: false,
+        items: [],
         error: action.data,
       });
     default:

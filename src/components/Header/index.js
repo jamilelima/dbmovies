@@ -11,6 +11,9 @@ import { API_KEY_ALT, URL_MOVIES_SEARCH } from '../../utils';
 import '../../styles/header.scss';
 import '../../styles/search_theme.scss';
 
+// ACTIONS
+import { getMovieDetails } from '../../actions';
+
 
 class Header extends Component {
 
@@ -46,7 +49,6 @@ class Header extends Component {
   }
 
   onSuggestionsFetchRequested = ({ value }) => {
-    console.log({ value });
     const suggestionValue = value.trim(); // The trim() method removes whitespace from both sides of a string.
     if (suggestionValue.length > 0) {
       let url = `${URL_MOVIES_SEARCH}${suggestionValue}${API_KEY_ALT}`;
@@ -87,9 +89,11 @@ class Header extends Component {
   );
 
   onSuggestionSelected = (event, { suggestion, method }) => {
+    const { dispatch } = this.props;
     if (method === 'enter')
       event.preventDefault();
     this.props.dispatch(push('/movie/' + suggestion.id));
+    dispatch(getMovieDetails(suggestion.id));
     this.setState({ value: '' });
   };
 

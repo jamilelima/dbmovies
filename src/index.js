@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import dbMoviesApp from './reducers';
@@ -8,7 +9,7 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(dbMoviesApp);
+const store = createStore(dbMoviesApp, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

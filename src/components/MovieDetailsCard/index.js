@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/card.scss';
 
-const MovieDetailsCard = ({ props }) => (
+const MovieDetailsCard = ({ movieDetails }) => (
   <div className="movie-card">
 
     <div className="wrapper">
@@ -14,9 +14,7 @@ const MovieDetailsCard = ({ props }) => (
 
         <div className="info">
 
-          <div className="movie-title">Captain Marvel</div>
-
-          <div className="movie-subtitle">Subtitle</div>
+          <div className="movie-title">{movieDetails.items.title}</div>
 
         </div>
 
@@ -31,7 +29,7 @@ const MovieDetailsCard = ({ props }) => (
         </div>
 
         <div className="movie-details">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore impedit mollitia quod ratione assumenda explicabo esse autem odio repellat similique incidunt, minima laborum, dicta asperiores pariatur, quas expedita animi quos... <a href="#">read more</a>
+          <p>{movieDetails.items.overview}<a href="#"> read more </a>
           </p>
 
           <div className="more-options">
@@ -43,8 +41,6 @@ const MovieDetailsCard = ({ props }) => (
       </div>
     </div>
   </div>
-
-
 );
 
 export default MovieDetailsCard;

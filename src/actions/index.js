@@ -84,6 +84,7 @@ export function getMovieDetails(movieId) {
       const response = await fetch(urlMovieDetails);
       const data = await response.json();
       return dispatch(getMovieSuccess(data));
+
     }
     catch (error) {
       return dispatch(getMovieFailure(error));
