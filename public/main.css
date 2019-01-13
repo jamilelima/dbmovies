@@ -175,3 +175,12 @@ img {
 
 .imdb-icon:hover, .more-info-icon:hover {
   color: #57abf2; }
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+  background: #999; }

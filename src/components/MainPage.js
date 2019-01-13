@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import MovieDetailsCard from './MovieDetailsCard';
+import Footer from './Footer';
 import { connect } from 'react-redux';
 import { getMovieDetails } from '../actions';
 
@@ -18,6 +19,7 @@ class MainPage extends Component {
       <React.Fragment>
         <Header />
         <MovieDetailsCard movieData={movieData} />
+        <Footer />
       </React.Fragment>
     )
   }
