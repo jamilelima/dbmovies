@@ -1,8 +1,10 @@
 # MoviesDb
 MoviesDb is a simple application built with [React](http://facebook.github.io/react/index.html) and [Redux](https://redux.js.org/) loading data via [The Movie Database - TMDb API](https://www.themoviedb.org/documentation/api).
 
+![](https://github.com/jamilelima/dbmovies/blob/master/public/assets/moviesdb.gif)
+
 ## Demo
-[MovieDB - DEMO]()
+[MovieDb - DEMO]()
 
 ## Tools
 
