@@ -28,7 +28,7 @@ const searchMovieList = (state = INITIAL_STATE, action) => {
 }
 
 
-const movieDetails = (state = INITIAL_STATE, action) => {
+const movieData = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_MOVIE:
       return Object.assign({}, state, {
@@ -55,7 +55,7 @@ const movieDetails = (state = INITIAL_STATE, action) => {
 
 const dbMoviesApp = combineReducers({
   searchMovieList,
-  movieDetails,
+  movieData,
   routing: routerReducer,
 })
 

@@ -13,19 +13,19 @@ class MainPage extends Component {
 
 
   render() {
-    const { movieDetails } = this.props;
+    const { movieData } = this.props;
     return (
       <React.Fragment>
         <Header />
-        <MovieDetailsCard movieDetails={movieDetails} />
+        <MovieDetailsCard movieData={movieData} />
       </React.Fragment>
     )
   }
 }
 
 function mapStateToProps(state) {
-  const { movieDetails } = state;
-  return { movieDetails }
+  const { movieData } = state;
+  return { movieData }
 }
 
 export default connect(mapStateToProps)(MainPage);

@@ -56,12 +56,12 @@ class Header extends Component {
         .then(json => json.results)
         .then(data => {
           const results = data.map(movie => {
-            const movieDetails = {};
-            movieDetails.id = movie.id
-            movieDetails.title = movie.title
-            movieDetails.img = movie.poster_path
-            movieDetails.year = (movie.release_date === '') ? "0000" : movie.release_date.substring(0, 4)
-            return movieDetails
+            const movieData = {};
+            movieData.id = movie.id
+            movieData.title = movie.title
+            movieData.img = movie.poster_path
+            movieData.year = (movie.release_date === '') ? "0000" : movie.release_date.substring(0, 4)
+            return movieData
           });
           this.setState({
             suggestions: results
