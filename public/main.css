@@ -15,6 +15,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px; }
+  @media screen and (max-width: 500px) {
+    nav {
+      flex-wrap: wrap; } }
+
+.logo > h1 {
+  color: #CCC;
+  font-size: 2em; }
 
 .react-autosuggest__container {
   position: relative; }
