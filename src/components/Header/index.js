@@ -31,19 +31,6 @@ class Header extends Component {
     })
   }
 
-  handleKeyDown = (event) => {
-    const { value } = this.state;
-    if (event.key === 'Enter') {
-      return this.handleSubmit(value);
-    }
-  }
-
-  handleSubmit = (searchText) => {
-    const { dispatch } = this.props;
-    dispatch(push(`/search/${searchText}`));
-    this.setState({ value: '' });
-  }
-
   getSuggestionValue = (suggestion) => {
     return suggestion.title;
   }
@@ -90,7 +77,6 @@ class Header extends Component {
     const { dispatch } = this.props;
     if (method === 'enter')
       event.preventDefault();
-    this.props.dispatch(push('/movie/' + suggestion.id));
     dispatch(getMovieDetails(suggestion.id));
     this.setState({ value: '' });
   };
@@ -102,7 +88,6 @@ class Header extends Component {
     const inputProps = {
       value,
       onChange: this.onChange,
-      onKeyPress: this.handleKeyDown,
       placeholder: 'Search Movie Title...'
     };
 
