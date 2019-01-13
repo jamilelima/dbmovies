@@ -10,7 +10,7 @@ import {
 
 const INITIAL_STATE = {
   isLoading: false,
-  items: [],
+  movie: [],
   error: {}
 }
 
@@ -19,7 +19,7 @@ const searchMovieList = (state = INITIAL_STATE, action) => {
     case SEARCH_MOVIE:
       return { ...state, isLoading: true };
     case SEARCH_MOVIE_SUCCESS:
-      return { ...state, isLoading: false, items: action.data };
+      return { ...state, isLoading: false, movie: action.data };
     case SEARCH_MOVIE_FAILURE:
       return { ...state, isLoading: false, error: action.data };
     default:
@@ -33,19 +33,19 @@ const movieDetails = (state = INITIAL_STATE, action) => {
     case GET_MOVIE:
       return Object.assign({}, state, {
         isLoading: true,
-        items: [],
+        movie: [],
         error: null,
       });
     case GET_MOVIE_SUCCESS:
       return Object.assign({}, state, {
         isLoading: false,
-        items: action.data,
+        movie: action.data,
         error: false,
       });
     case GET_MOVIE_FAILURE:
       return Object.assign({}, state, {
         isLoading: false,
-        items: [],
+        movie: [],
         error: action.data,
       });
     default:

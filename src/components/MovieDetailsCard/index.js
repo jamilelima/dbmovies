@@ -17,7 +17,7 @@ class MovieDetailsCard extends Component {
   }
 
   getFormattedGenres = () => {
-    const { genres } = this.props.movieDetails.items;
+    const { genres } = this.props.movieDetails.movie;
     let genresArray = [];
     if (genres !== undefined) {
       genres.map(genre => genresArray.push(genre.name))
@@ -29,7 +29,7 @@ class MovieDetailsCard extends Component {
   }
 
   render() {
-    const { title, tagline, overview, genres, poster_path, vote_average, runtime, imdb_id, homepage } = this.props.movieDetails.items;
+    const { title, tagline, overview, genres, poster_path, vote_average, runtime, imdb_id, homepage } = this.props.movieDetails.movie;
 
     const formattedGenres = this.getFormattedGenres()
 
