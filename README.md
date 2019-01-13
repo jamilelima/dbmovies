@@ -4,7 +4,7 @@ MoviesDb is a simple application built with [React](http://facebook.github.io/re
 ![](https://github.com/jamilelima/dbmovies/blob/master/public/assets/moviesdb.gif)
 
 ## Demo
-[MovieDb - DEMO]()
+[MovieDb - DEMO](https://jamilelima.github.io/dbmovies/)
 
 ## Tools
 
