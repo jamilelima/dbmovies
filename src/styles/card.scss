@@ -1,6 +1,5 @@
 img {
   width: 100%;
-  vertical-align: bottom;
 }
 
 .movie-details-container {
@@ -9,6 +8,9 @@ img {
   margin: 4em auto;
   max-width: 900px;
   border-radius: 15px;
+  box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);  
+  -webkit-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
   @media screen and (max-width: 800px) {
     max-width: 500px;
     flex-wrap: wrap;
