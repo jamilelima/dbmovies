@@ -59,8 +59,6 @@ class Header extends Component {
             const movieData = {};
             movieData.id = movie.id
             movieData.title = movie.title
-            movieData.img = movie.poster_path
-            movieData.year = (movie.release_date === '') ? "0000" : movie.release_date.substring(0, 4)
             return movieData
           });
           this.setState({
