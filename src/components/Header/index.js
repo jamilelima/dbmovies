@@ -1,7 +1,6 @@
 // CORE
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 
 // HELPERS
 import Autosuggest from 'react-autosuggest';
@@ -66,11 +65,9 @@ class Header extends Component {
   };
 
   renderSuggestion = (suggestion) => (
-    <a>
-      <div className="search-result-text">
-        {suggestion.title}
-      </div>
-    </a>
+    <div className="search-result-text">
+      {suggestion.title}
+    </div>
   );
 
   onSuggestionSelected = (event, { suggestion, method }) => {
