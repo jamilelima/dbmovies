@@ -5,11 +5,17 @@ import Footer from './Footer';
 import { connect } from 'react-redux';
 import { getMovieDetails } from '../actions';
 
+const favoriteMovies = [297802, 299536, 383498, 363088, 284054, 141052, 297762, 263115, 284052, 271110, 345920, 300668];
 class MainPage extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getMovieDetails(299537)); //@TODO: Implementar array com meus filmes preferidos e passa-los randomicamente pra cá
+    dispatch(getMovieDetails(this.randomNumbers()));
+  }
+
+  randomNumbers = () => {
+    const number = favoriteMovies[Math.floor(Math.random() * favoriteMovies.length)];
+    return number;
   }
 
 
