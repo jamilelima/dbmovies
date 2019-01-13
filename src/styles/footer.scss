@@ -1,0 +1,16 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #FFF;
+}
+
+.code-icon, .github-profile  {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.code-icon:hover, .github-profile:hover {
+  text-decoration: none;
+  text-decoration: underline;
+}

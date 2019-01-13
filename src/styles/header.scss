@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  @media screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+}
+
+.logo > h1 {
+  color: #CCC;
+  font-size: 2em;
+}
