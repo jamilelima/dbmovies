@@ -94,7 +94,7 @@ class Header extends Component {
     return (
       <nav>
         <div className="logo">
-          <h1>MOVIES DB</h1>
+          <img src="https://bit.ly/2QHaVNq" alt="TMDB logo" width="150" height="60" />
         </div>
         <div className="search">
           <Autosuggest

@@ -12,7 +12,7 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px; }
   @media screen and (max-width: 500px) {
@@ -178,9 +178,14 @@ nav {
 
 .footer-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  height: 10%;
   width: 100%;
-  background: #999; }
+  color: #FFF; }
+
+.code-icon, .github-profile {
+  color: #FFF;
+  text-decoration: none; }
+
+.code-icon:hover, .github-profile:hover {
+  text-decoration: none;
+  text-decoration: underline; }
