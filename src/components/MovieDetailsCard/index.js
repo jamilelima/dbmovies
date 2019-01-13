@@ -17,10 +17,21 @@ class MovieDetailsCard extends Component {
     }
   }
 
+  getFormattedReleaseDate = () => {
+    const { release_date } = this.props.movieData.movie;
+    if (release_date !== undefined) {
+      const formattedReleaseDate = release_date.substring(0, 4);
+      return formattedReleaseDate;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     const { title, tagline, overview, poster_path, vote_average, runtime, imdb_id, homepage } = this.props.movieData.movie;
 
     const formattedGenres = this.getFormattedGenres();
+    const formattedReleaseDate = this.getFormattedReleaseDate();
 
     return (
       <div className="movie-details-container">
@@ -35,6 +46,7 @@ class MovieDetailsCard extends Component {
           <ul>
             <li><span className="icon far fa-star"></span><span>{vote_average}/10</span></li>
             <li><span className="far fa-clock"></span><span>{runtime}min</span></li>
+            <li><span className="far fa-calendar-check"></span><span>{formattedReleaseDate}</span></li>
           </ul>
 
           <p>
