@@ -5,7 +5,7 @@
 
 html, body {
   height: 100%;
-  background: #59ABE3; }
+  background: #213f53; }
 
 body {
   font-family: 'Nunito', sans-serif; }
@@ -13,7 +13,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  align-movie: center;
+  align-items: center;
   padding: 10px; }
 
 .react-autosuggest__container {
@@ -22,45 +22,55 @@ nav {
 .react-autosuggest__input {
   width: 280px;
   height: 35px;
-  padding: 10px 20px;
-  font-family: Helvetica, sans-serif;
+  padding: 20px 20px;
+  font-family: 'Nunito', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  border: 1px solid #aaa;
-  border-radius: 4px; }
+  border: 3px solid #00B4CC;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF; }
+
+.react-autosuggest__input:focus {
+  color: #00B4CC; }
 
 .react-autosuggest__input--focused {
   outline: none; }
 
 .react-autosuggest__input--open {
   border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
+  border-bottom-right-radius: 0;
+  border-color: #00B4CC; }
 
 .react-autosuggest__suggestions-container--open {
   display: block;
   position: absolute;
   top: 38px;
   width: 280px;
-  border: 1px solid #FFF;
-  background-color: #CCC;
+  border: 1px solid #00B4CC;
+  background-color: #F6F6F6;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  z-index: 2; }
+  z-index: 2;
+  color: #50505a; }
 
 .react-autosuggest__suggestions-list {
   margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+  font-family: 'Nunito', sans-serif; }
 
 .react-autosuggest__suggestion {
   cursor: pointer;
   padding: 10px 20px; }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #B1DDF1; }
+  background-color: #00B4CC;
+  color: #FFF; }
 
 .searchResult-text {
   line-height: 21px;
@@ -74,19 +84,20 @@ nav {
 .searchResult-link {
   display: block;
   padding: 5px;
-  text-decoration: none;
-  color: aqua; }
+  text-decoration: none; }
 
 img {
-  width: 100%;
-  vertical-align: bottom; }
+  width: 100%; }
 
 .movie-details-container {
   display: flex;
   background-color: #e6e6e6;
   margin: 4em auto;
   max-width: 900px;
-  border-radius: 15px; }
+  border-radius: 15px;
+  box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75); }
   @media screen and (max-width: 800px) {
     .movie-details-container {
       max-width: 500px;
