@@ -22,17 +22,13 @@
   border-bottom-right-radius: 0;
 }
 
-.react-autosuggest__suggestions-container {
-  display: none;
-}
-
 .react-autosuggest__suggestions-container--open {
   display: block;
   position: absolute;
   top: 38px;
   width: 280px;
-  border: 1px solid #aaa;
-  background-color: #fff;
+  border: 1px solid #FFF;
+  background-color: #CCC;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -45,6 +41,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+
 }
 
 .react-autosuggest__suggestion {
@@ -53,7 +50,7 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #ddd;
+  background-color: #B1DDF1;
 }
 
 .searchResult-text {
@@ -61,15 +58,8 @@
   overflow: hidden;
   text-align: left;
   white-space: nowrap;
-}
 
-.searchResult-image {
-    width: 40px;
-    height: 50px;
-    float: left;
-    margin-right: 8px;
 }
-
 .searchResult-name {
     font-weight: bold;
 }
@@ -77,4 +67,6 @@
 .searchResult-link {
   display: block;
   padding: 5px;
+  text-decoration: none;
+  color: aqua;
 }

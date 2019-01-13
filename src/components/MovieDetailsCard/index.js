@@ -1,51 +1,43 @@
 import React, { Component } from 'react';
 import '../../styles/card.scss';
+import { URl_MOVIE_POSTER, IMG_SIZE } from '../../utils';
+
 
 class MovieDetailsCard extends Component {
   render() {
-    const { title, overview, genres } = this.props.movieDetails.items;
+    const { title, tagline, overview, genres, poster_path, vote_average, runtime, imdb_id, homepage } = this.props.movieDetails.items;
 
     return (
-      <div className="movie-card">
+      <div className="movie-details-container">
 
-        <div className="wrapper">
+        <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="Movie Poster" />
 
-          <a href="#">
-            <img src="https://bit.ly/2RI8rmp" alt="cover" className="cover" width="200" height="300" />
-          </a>
+        <div className="info-container">
 
-          <div className="movie-main-info-container">
+          <h2>{title}</h2>
+          <h3>{tagline}</h3>
 
-            <div className="info">
+          <ul>
+            <li><span className="icon far fa-star"></span><span>{vote_average}/10</span></li>
+            <li><span className="far fa-clock"></span><span>{runtime}min</span></li>
+          </ul>
 
-              <div className="movie-title">{title}</div>
+          <p>
+            {overview}
+          </p>
 
-            </div>
+          <p className="genres">
+            <span>Genre:&nbsp;</span>Milk, salt, coriander, cardamom, cinnamon, turmeric, honey, vanilla extract, regular oats, oat bran.</p>
 
+          <div className="footer-icons-container">
+            <a href={`https://www.imdb.com/title/${imdb_id}`} target="_blank" rel="noopener noreferrer"><i className="imdb-icon fab fa-imdb" title="More on IMDB"></i></a>
+            <a href={`${homepage}`} target="_blank" rel="noopener noreferrer" title="Movie Homepage"><i className="more-info-icon fas fa-info-circle"></i></a>
           </div>
 
-          <div className="movie-description">
-
-            <div className="movie-genre">
-              <span className="genre">action</span>
-              <span className="genre">fantasy</span>
-              <span className="genre">adventure</span>
-            </div>
-
-            <div className="movie-details">
-              <p>{overview}<a href="#"> read more </a>
-              </p>
-
-              <div className="more-options">
-                <a href="#" data-tooltip="Watch trailer" data-placement="top">
-                  <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c545.png" width="30" height="20" alt="Watch trailer" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
 
+
+      </div>
     )
   }
 }
