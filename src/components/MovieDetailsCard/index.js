@@ -36,7 +36,7 @@ class MovieDetailsCard extends Component {
     return (
       <div className="movie-details-container">
 
-        <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="Movie Poster" width="200" height="500" />
+        <img class="movie-poster" src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="Movie Poster" width="200" height="500" />
 
         <div className="info-container">
 
