@@ -1,62 +1,62 @@
 // CORE
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 // HELPERS
-import Autosuggest from 'react-autosuggest';
-import { API_KEY_ALT, URL_MOVIES_SEARCH } from '../../utils';
+import Autosuggest from "react-autosuggest";
+import { API_KEY_ALT, URL_MOVIES_SEARCH } from "../../utils";
 
 // STYLES
-import '../../styles/header.scss';
-import '../../styles/search_theme.scss';
+import "../../styles/header.scss";
+import "../../styles/search_theme.scss";
 
 // ACTIONS
-import { getMovieDetails } from '../../actions';
-
+import { getMovieDetails } from "../../actions";
 
 class Header extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      suggestions: [],
-    }
+      value: "",
+      suggestions: []
+    };
   }
 
   onChange = (event, { newValue, method }) => {
     this.setState({
-      value: newValue,
-    })
-  }
+      value: newValue
+    });
+  };
 
-  getSuggestionValue = (suggestion) => {
+  getSuggestionValue = suggestion => {
     return suggestion.title;
-  }
+  };
 
   onSuggestionsFetchRequested = ({ value }) => {
     const suggestionValue = value.trim(); // The trim() method removes whitespace from both sides of a string.
     if (suggestionValue.length > 0) {
-      let url = `${URL_MOVIES_SEARCH}${suggestionValue}${API_KEY_ALT}`;
-      fetch(url).then(response => response.json())
+      let url = `${URL_MOVIES_SEARCH}${suggestionValue}${API_KEY_ALT}&language=pt-BR`;
+      fetch(url)
+        .then(response => response.json())
         .then(json => json.results)
         .then(data => {
           const results = data.map(movie => {
             const movieData = {};
-            movieData.id = movie.id
-            movieData.title = movie.title
-            return movieData
+            movieData.id = movie.id;
+            movieData.title = movie.title;
+            return movieData;
           });
           this.setState({
             suggestions: results
           });
-        }).catch(error => console.log(error, " - Exception"));
+        })
+        .catch(error => console.log(error, " - Exception"));
     } else {
       this.setState({
         suggestions: []
-      })
+      });
     }
-  }
+  };
 
   onSuggestionsClearRequested = () => {
     this.setState({
@@ -64,34 +64,35 @@ class Header extends Component {
     });
   };
 
-  renderSuggestion = (suggestion) => (
-    <div className="search-result-text">
-      {suggestion.title}
-    </div>
+  renderSuggestion = suggestion => (
+    <div className="search-result-text">{suggestion.title}</div>
   );
 
   onSuggestionSelected = (event, { suggestion, method }) => {
     const { dispatch } = this.props;
-    if (method === 'enter')
-      event.preventDefault();
+    if (method === "enter") event.preventDefault();
     dispatch(getMovieDetails(suggestion.id));
-    this.setState({ value: '' });
+    this.setState({ value: "" });
   };
 
   render() {
-
     const { value, suggestions } = this.state;
 
     const inputProps = {
       value,
       onChange: this.onChange,
-      placeholder: 'Search Movie Title...'
+      placeholder: "Search Movie Title..."
     };
 
     return (
       <nav>
         <div className="logo">
-          <img src="https://bit.ly/2QHaVNq" alt="TMDB logo" width="150" height="60" />
+          <img
+            src="https://bit.ly/2QHaVNq"
+            alt="TMDB logo"
+            width="150"
+            height="60"
+          />
         </div>
         <div className="search">
           <Autosuggest
@@ -101,12 +102,15 @@ class Header extends Component {
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
-            inputProps={inputProps} />
+            inputProps={inputProps}
+          />
         </div>
       </nav>
     );
   }
 }
 
-
-export default connect(null, null)(Header);
+export default connect(
+  null,
+  null
+)(Header);
