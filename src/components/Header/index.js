@@ -1,5 +1,5 @@
 // CORE
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 // HELPERS
@@ -85,8 +85,8 @@ class Header extends Component {
     };
 
     return (
-      <nav>
-        <div className="logo">
+      <Fragment>
+        <div className="logo-container">
           <img
             src="https://bit.ly/2QHaVNq"
             alt="TMDB logo"
@@ -94,18 +94,20 @@ class Header extends Component {
             height="60"
           />
         </div>
-        <div className="search">
-          <Autosuggest
-            suggestions={suggestions}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionSelected={this.onSuggestionSelected}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            getSuggestionValue={this.getSuggestionValue}
-            renderSuggestion={this.renderSuggestion}
-            inputProps={inputProps}
-          />
-        </div>
-      </nav>
+        <nav>
+          <div className="search">
+            <Autosuggest
+              suggestions={suggestions}
+              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+              onSuggestionSelected={this.onSuggestionSelected}
+              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+              getSuggestionValue={this.getSuggestionValue}
+              renderSuggestion={this.renderSuggestion}
+              inputProps={inputProps}
+            />
+          </div>
+        </nav>
+      </Fragment>
     );
   }
 }
