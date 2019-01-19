@@ -9,13 +9,13 @@
 
 .react-autosuggest__input {
   padding: 15px;
-  width: 60%;
+  width: 70%;
   font-family: $title-font;
   font-size: 20px;
   border: none;
   border-radius: 25px;
   outline: none;
-  // color: $primary-color;
+  color: $primary-color;
   background-color: #ebebeb;
 }
 
@@ -29,20 +29,20 @@
 
 .react-autosuggest__input--open {
   border-radius: 20px;
-  // border-color: #00b4cc;
-  width: 60%;
+  border-radius: 25px;
+  width: 70%;
 }
 
 .react-autosuggest__suggestions-container--open {
-  display: block;
-  position: relative;
-  border: 1px solid #00b4cc;
-  background-color: #f6f6f6;
+  position: absolute;
+  border: 1px solid $primary-color;
+  background-color: $bg-color;
   font-weight: 300;
   font-size: 16px;
   border-radius: 20px;
   z-index: 999;
-  width: 60%;
+  width: 70%;
+  top: 17%;
 }
 
 .react-autosuggest__suggestions-list {
@@ -56,8 +56,9 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #00b4cc;
-  color: #fff;
+  background-color: $primary-color;
+  color: $font-primary-color;
+  border-radius: 20px;
 }
 
 .searchResult-text {
