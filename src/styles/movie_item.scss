@@ -3,7 +3,7 @@
 .container {
   display: flex;
   margin: 0 auto;
-  margin: 100px 300px;
+  margin: 100px 300px 100px 300px;
   position: relative;
 }
 
@@ -14,8 +14,8 @@
 }
 
 .card-info {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  -moz-box-flex: 1;
 }
 
 .header-container {
@@ -33,7 +33,6 @@
 
 .movie-details {
   flex: 1;
-  flex-direction: row;
   padding: 40px 70px 0 30px;
 }
 
@@ -65,9 +64,12 @@
   }
 }
 
-li {
+.genre-list-container {
+  display: flex;
+}
+
+.genre-item {
   list-style: none;
-  display: inline;
   margin: 10px 10px 10px 0px;
   padding: 10px;
   background-color: #fff;

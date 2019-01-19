@@ -48,7 +48,6 @@ nav {
   border: none;
   border-radius: 25px;
   outline: none;
-  color: #116193;
   background-color: #ebebeb; }
 
 .react-autosuggest__input::placeholder {
@@ -59,7 +58,6 @@ nav {
 
 .react-autosuggest__input--open {
   border-radius: 20px;
-  border-color: #00b4cc;
   width: 60%; }
 
 .react-autosuggest__suggestions-container--open {

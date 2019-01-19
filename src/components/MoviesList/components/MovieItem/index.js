@@ -26,7 +26,7 @@ class MovieItem extends Component {
       return Object.keys(genres).map(key => {
         let genreName = genres[key].name;
         return (
-          <li key={genres[key]} index={key} className="test">
+          <li key={genres[key]} index={key} className="genre-item">
             {genreName}
           </li>
         );
@@ -61,7 +61,7 @@ class MovieItem extends Component {
             <p className="release-date-text">{formattedReleaseDate}</p>
             <div className="movie-details">
               <p className="overview-text">{overview}</p>
-              {formattedGenre}
+              <ul className="genre-list-container">{formattedGenre}</ul>
             </div>
           </div>
         </div>
