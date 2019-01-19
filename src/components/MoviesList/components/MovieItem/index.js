@@ -3,6 +3,8 @@ import "../../../../styles/movie_item.scss";
 
 import { URl_MOVIE_POSTER, IMG_SIZE } from "../../../../utils";
 
+import CircleInfo from "../../../CircleInfo";
+
 class MovieItem extends Component {
   getFormattedReleaseDate = () => {
     const { release_date } = this.props.movieData.movie;
@@ -37,6 +39,7 @@ class MovieItem extends Component {
           <div className="card-info">
             <div className="header-container">
               <h1 className="title-text">{title}</h1>
+              <CircleInfo />
             </div>
             <div className="movie-details">
               <p>{overview}</p>

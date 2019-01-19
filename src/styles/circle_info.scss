@@ -1,0 +1,10 @@
+@import "../styles/variables.scss";
+
+.out-circle {
+  background: $primary-color;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  box-shadow: 0 0 0 5px $font-primary-color;
+}
