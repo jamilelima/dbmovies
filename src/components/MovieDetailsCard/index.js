@@ -1,70 +1,85 @@
-import React, { Component } from 'react';
-import '../../styles/card.scss';
-import { URl_MOVIE_POSTER, IMG_SIZE } from '../../utils';
-
+import React, { Component } from "react";
+import "../../styles/card.scss";
+import {
+  URl_MOVIE_POSTER,
+  IMG_SIZE,
+  getFormattedReleaseDate,
+  getFormattedGenre
+} from "../../utils";
 
 class MovieDetailsCard extends Component {
-
-  getFormattedGenres = () => {
-    const { genres } = this.props.movieData.movie;
-    let genresArray = [];
-    if (genres !== undefined) {
-      genres.map(genre => genresArray.push(genre.name))
-      const formattedGenres = genresArray.join(', ');
-      return formattedGenres;
-    } else {
-      return null;
-    }
-  }
-
-  getFormattedReleaseDate = () => {
-    const { release_date } = this.props.movieData.movie;
-    if (release_date !== undefined) {
-      const formattedReleaseDate = release_date.substring(0, 4);
-      return formattedReleaseDate;
-    } else {
-      return null;
-    }
-  }
-
   render() {
-    const { title, tagline, overview, poster_path, vote_average, runtime, imdb_id, homepage } = this.props.movieData.movie;
+    const {
+      title,
+      tagline,
+      overview,
+      poster_path,
+      vote_average,
+      runtime,
+      imdb_id,
+      homepage,
+      release_date,
+      genres
+    } = this.props.movieData.movie;
 
-    const formattedGenres = this.getFormattedGenres();
-    const formattedReleaseDate = this.getFormattedReleaseDate();
+    const formattedReleaseDate = getFormattedReleaseDate(release_date);
+    const formattedGenre = getFormattedGenre(genres);
 
     return (
       <div className="movie-details-container">
-
-        <img className="movie-poster" src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="Movie Poster" width="200" height="500" />
-
-        <div className="info-container">
-
-          <h2>{title}</h2>
-          <h3>{tagline}</h3>
-
-          <ul>
-            <li><span className="icon far fa-star"></span><span>{vote_average}/10</span></li>
-            <li><span className="far fa-clock"></span><span>{runtime}min</span></li>
-            <li><span className="far fa-calendar-check"></span><span>{formattedReleaseDate}</span></li>
-          </ul>
-
-          <p>
-            {overview}
-          </p>
-
-          <p className="genres">
-            <span>Genre:&nbsp;</span>{formattedGenres}</p>
-
-          <div className="footer-icons-container">
-            <a href={`https://www.imdb.com/title/${imdb_id}`} target="_blank" rel="noopener noreferrer"><i className="imdb-icon fab fa-imdb" title="More on IMDB"></i></a>
-            <a href={`${homepage}`} target="_blank" rel="noopener noreferrer" title="Movie Homepage"><i className="more-info-icon fas fa-info-circle"></i></a>
-          </div>
-
+        <div className="movie-title-container">
+          <h1 className="movie-title-text">{title}</h1>
+          <p className="formatted-release-date">{formattedReleaseDate}</p>
         </div>
+        <div className="info-container">
+          <div className="overview-container">
+            <h3 className="overview-title">Sinopse</h3>
+            <p className="movie-details-overview-text">{overview}</p>
 
+            <h3 className="overview-title">Informações</h3>
+            <div className="info-items-container">
+              <div className="info-item">
+                <h6>Situação</h6>
+                <span>Lançado</span>
+              </div>
+              <div className="info-item">
+                <h6>Idioma</h6>
+                <span>Inglês</span>
+              </div>
+              <div className="info-item">
+                <h6>Duração</h6>
+                <span>2h 10min</span>
+              </div>
+              <div className="info-item">
+                <h6>Orçamento</h6>
+                <span>$180.000.000,00</span>
+              </div>
+              <div className="info-item">
+                <h6>Receita</h6>
+                <span>$853.977.000,00</span>
+              </div>
+              <div className="info-item">
+                <h6>Lucro</h6>
+                <span>$673.977.000,00</span>
+              </div>
+            </div>
+            <ul className="movie-details-genres">{formattedGenre}</ul>
+          </div>
+          <div>
+            <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="" />
+          </div>
+        </div>
+        <iframe
+          width="auto"
+          height="720"
+          src="https://www.youtube.com/embed/GX33bIOA5aA"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="Movie trailer"
+        />
       </div>
-    )
+    );
   }
 }
 

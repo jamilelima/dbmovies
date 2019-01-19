@@ -5,47 +5,21 @@ import { URl_MOVIE_POSTER, IMG_SIZE } from "../../../../utils";
 
 import CircleInfo from "../../../CircleInfo";
 
+import { getFormattedReleaseDate, getFormattedGenre } from "../../../../utils";
+
 class MovieItem extends Component {
-  getFormattedReleaseDate = () => {
-    const { release_date } = this.props.movieData.movie;
-    if (release_date !== undefined) {
-      const formattedReleaseDate = release_date
-        .substring(0, 10)
-        .split("-")
-        .reverse()
-        .join("/");
-      return formattedReleaseDate;
-    } else {
-      return null;
-    }
-  };
-
-  getFormattedGenre = () => {
-    const { genres } = this.props.movieData.movie;
-    if (genres !== undefined) {
-      return Object.keys(genres).map(key => {
-        let genreName = genres[key].name;
-        return (
-          <li key={genres[key]} index={key} className="genre-item">
-            {genreName}
-          </li>
-        );
-      });
-    } else {
-      return null;
-    }
-  };
-
   render() {
     const {
       title,
       overview,
       poster_path,
-      vote_average
+      vote_average,
+      release_date,
+      genres
     } = this.props.movieData.movie;
 
-    const formattedReleaseDate = this.getFormattedReleaseDate();
-    const formattedGenre = this.getFormattedGenre();
+    const formattedReleaseDate = getFormattedReleaseDate(release_date);
+    const formattedGenre = getFormattedGenre(genres);
 
     return (
       <div className="container">
