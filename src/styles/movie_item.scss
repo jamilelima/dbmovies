@@ -1,9 +1,10 @@
+@import "../styles/variables.scss";
+
 .container {
   display: flex;
   margin: 0 auto;
   margin: 100px;
   position: relative;
-  background-color: pink;
 }
 
 .card-content {
@@ -17,17 +18,26 @@
 }
 
 .header-container {
-  background-color: skyblue;
+  background-color: $primary-color;
+  padding: 15px 15px 0 15px;
 }
 
 .title-text {
   margin-left: 100px;
   padding: 10px;
+  color: $font-primary-color;
+  font-size: 2.25em;
+  font-weight: 400;
 }
 
 .movie-details {
   flex: 1;
-  background-color: #ccc;
+  padding: 70px 70px 0 30px;
+  background-color: $bg-color;
+}
+
+.overview-text {
+  font-size: 1.4em;
 }
 
 @media screen and (max-width: 1280px) {

@@ -1,15 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../../styles/circle_info.scss";
 
-const CircleInfo = () => {
-  return (
-    <div className="content">
-      <div className="out-circle" />
-    </div>
-  );
+const CircleInfo = props => {
+  return <div class="circle">{`${props.percent}%`}</div>;
 };
 
-CircleInfo.propTypes = {};
+CircleInfo.defaultProps = {
+  percent: 80
+};
 
 export default CircleInfo;

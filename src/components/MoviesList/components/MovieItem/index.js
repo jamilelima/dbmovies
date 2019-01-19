@@ -42,7 +42,7 @@ class MovieItem extends Component {
               <CircleInfo />
             </div>
             <div className="movie-details">
-              <p>{overview}</p>
+              <p className="overview-text">{overview}</p>
             </div>
           </div>
         </div>
