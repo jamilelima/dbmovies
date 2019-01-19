@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import "../../../../styles/movie_item.scss";
+import { Link } from "react-router-dom";
 
 import { URl_MOVIE_POSTER, IMG_SIZE } from "../../../../utils";
-
 import CircleInfo from "../../../CircleInfo";
 
 import { getFormattedReleaseDate, getFormattedGenre } from "../../../../utils";
+import "../../../../styles/movie_item.scss";
 
 class MovieItem extends Component {
   render() {
     const {
+      id,
       title,
       overview,
       poster_path,
@@ -27,7 +28,9 @@ class MovieItem extends Component {
           <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="" />
           <div className="card-info">
             <div className="header-container">
-              <h1 className="title-text">{title}</h1>
+              <Link to={`/movie/${id}`}>
+                <h1 className="title-text">{title}</h1>
+              </Link>
               <CircleInfo avarage={vote_average} />
             </div>
             <p className="release-date-text">{formattedReleaseDate}</p>
