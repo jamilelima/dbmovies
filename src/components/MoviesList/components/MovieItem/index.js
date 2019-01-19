@@ -39,11 +39,9 @@ class MovieItem extends Component {
   render() {
     const {
       title,
-      tagline,
       overview,
       poster_path,
-      imdb_id,
-      homepage
+      vote_average
     } = this.props.movieData.movie;
 
     const formattedReleaseDate = this.getFormattedReleaseDate();
@@ -56,7 +54,7 @@ class MovieItem extends Component {
           <div className="card-info">
             <div className="header-container">
               <h1 className="title-text">{title}</h1>
-              <CircleInfo />
+              <CircleInfo avarage={vote_average} />
             </div>
             <p className="release-date-text">{formattedReleaseDate}</p>
             <div className="movie-details">

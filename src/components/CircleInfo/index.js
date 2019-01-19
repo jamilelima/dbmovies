@@ -2,11 +2,22 @@ import React from "react";
 import "../../styles/circle_info.scss";
 
 const CircleInfo = props => {
-  return <div class="circle">{`${props.percent}%`}</div>;
+  const { avarage } = props;
+
+  const calculateAndReturnPercent = () => {
+    const MAX = 10;
+    const PERCENT = 100;
+    const result = (avarage / MAX) * PERCENT;
+    return result;
+  };
+
+  const avarageInPercent = calculateAndReturnPercent();
+
+  return <div class="circle">{`${avarageInPercent}%`}</div>;
 };
 
 CircleInfo.defaultProps = {
-  percent: 80
+  percent: "?"
 };
 
 export default CircleInfo;
