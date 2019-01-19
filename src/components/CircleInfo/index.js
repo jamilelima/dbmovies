@@ -17,7 +17,7 @@ const CircleInfo = props => {
 };
 
 CircleInfo.defaultProps = {
-  percent: "?"
+  avarage: "?"
 };
 
 export default CircleInfo;
