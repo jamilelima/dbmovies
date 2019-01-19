@@ -8,9 +8,9 @@
   margin: 4em auto;
   max-width: 900px;
   border-radius: 15px;
-  box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);  
-  -webkit-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 56px -6px rgba(0, 0, 0, 0.75);
   @media screen and (max-width: 800px) {
     max-width: 500px;
     flex-wrap: wrap;
@@ -49,20 +49,21 @@
   color: #838689;
 }
 
-.info-container h2, .info-container h3 {
+.info-container h2,
+.info-container h3 {
   margin: 0;
   font-weight: 300;
 }
 
 .info-container h2 {
   font-size: 1.75em;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   color: #50505a;
 }
 
 .info-container h3 {
   font-size: 0.9375em;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   color: #78788c;
 }
 
@@ -87,11 +88,13 @@
   background-repeat: no-repeat;
 }
 
-.imdb-icon, .more-info-icon {
+.imdb-icon,
+.more-info-icon {
   padding: 5px;
   font-size: 36px;
-  color: #A4A4A4;
+  color: #a4a4a4;
 }
-.imdb-icon:hover, .more-info-icon:hover {
+.imdb-icon:hover,
+.more-info-icon:hover {
   color: #213f53;
 }

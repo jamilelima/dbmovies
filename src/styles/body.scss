@@ -1,15 +1,21 @@
+@import "./variables.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  background: #213f53;
+  background: #fff;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: $title-font;
 }
 
+p {
+  font-family: $text-font;
+}

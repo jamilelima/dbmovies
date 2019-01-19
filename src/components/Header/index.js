@@ -85,27 +85,20 @@ class Header extends Component {
     };
 
     return (
-      <Fragment>
+      <Fragment className="container">
         <div className="logo-container">
-          <img
-            src="https://bit.ly/2QHaVNq"
-            alt="TMDB logo"
-            width="150"
-            height="60"
-          />
+          <h1 className="header-title">Movies</h1>
         </div>
         <nav>
-          <div className="search">
-            <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionSelected={this.onSuggestionSelected}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              getSuggestionValue={this.getSuggestionValue}
-              renderSuggestion={this.renderSuggestion}
-              inputProps={inputProps}
-            />
-          </div>
+          <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionSelected={this.onSuggestionSelected}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={this.getSuggestionValue}
+            renderSuggestion={this.renderSuggestion}
+            inputProps={inputProps}
+          />
         </nav>
       </Fragment>
     );
