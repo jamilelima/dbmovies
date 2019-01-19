@@ -81,7 +81,7 @@ class Header extends Component {
     const inputProps = {
       value,
       onChange: this.onChange,
-      placeholder: "Search Movie Title..."
+      placeholder: "Busque um filme pelo nome..."
     };
 
     return (
