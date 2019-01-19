@@ -20,6 +20,22 @@ class MovieItem extends Component {
     }
   };
 
+  getFormattedGenre = () => {
+    const { genres } = this.props.movieData.movie;
+    if (genres !== undefined) {
+      return Object.keys(genres).map(key => {
+        let genreName = genres[key].name;
+        return (
+          <li key={genres[key]} index={key} className="test">
+            {genreName}
+          </li>
+        );
+      });
+    } else {
+      return null;
+    }
+  };
+
   render() {
     const {
       title,
@@ -30,7 +46,8 @@ class MovieItem extends Component {
       homepage
     } = this.props.movieData.movie;
 
-    // const formattedReleaseDate = this.getFormattedReleaseDate();
+    const formattedReleaseDate = this.getFormattedReleaseDate();
+    const formattedGenre = this.getFormattedGenre();
 
     return (
       <div className="container">
@@ -41,8 +58,10 @@ class MovieItem extends Component {
               <h1 className="title-text">{title}</h1>
               <CircleInfo />
             </div>
+            <p className="release-date-text">{formattedReleaseDate}</p>
             <div className="movie-details">
               <p className="overview-text">{overview}</p>
+              {formattedGenre}
             </div>
           </div>
         </div>
