@@ -27,7 +27,7 @@ export const getFormattedGenre = genres => {
     return Object.keys(genres).map(key => {
       let genreName = genres[key].name;
       return (
-        <li key={genres[key]} index={key} className="genre-item">
+        <li key={key} index={key} className="genre-item">
           {genreName}
         </li>
       );
