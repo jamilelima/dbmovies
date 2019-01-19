@@ -8,7 +8,7 @@ const CircleInfo = props => {
     const MAX = 10;
     const PERCENT = 100;
     const result = (avarage / MAX) * PERCENT;
-    return result;
+    return Math.round(result);
   };
 
   const avarageInPercent = calculateAndReturnPercent();
