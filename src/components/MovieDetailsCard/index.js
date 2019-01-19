@@ -6,8 +6,16 @@ import {
   getFormattedReleaseDate,
   getFormattedGenre
 } from "../../utils";
+import { connect } from "react-redux";
+import { getMovieDetails } from "../../actions";
 
 class MovieDetailsCard extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    const { movieId } = this.props.match.params;
+    dispatch(getMovieDetails(movieId));
+  }
+
   render() {
     const {
       title,
@@ -83,4 +91,9 @@ class MovieDetailsCard extends Component {
   }
 }
 
-export default MovieDetailsCard;
+function mapStateToProps(state) {
+  const { movieData } = state;
+  return { movieData };
+}
+
+export default connect(mapStateToProps)(MovieDetailsCard);
