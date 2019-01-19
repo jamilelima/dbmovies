@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import MovieDetailsCard from "./MovieDetailsCard";
 import Footer from "./Footer";
 import { connect } from "react-redux";
 import { getMovieDetails } from "../actions";
@@ -37,8 +36,7 @@ class MainPage extends Component {
     return (
       <React.Fragment>
         <Header />
-        <MovieDetailsCard movieData={movieData} />
-        {/* <MovieItem movieData={movieData} /> */}
+        <MovieItem movieData={movieData} />
         <Footer />
       </React.Fragment>
     );
