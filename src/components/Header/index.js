@@ -85,7 +85,7 @@ class Header extends Component {
     };
 
     return (
-      <Fragment className="container">
+      <Fragment>
         <div className="logo-container">
           <h1 className="header-title">Movies</h1>
         </div>
