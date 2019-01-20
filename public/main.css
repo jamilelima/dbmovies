@@ -71,8 +71,11 @@ body {
   padding: 10px 20px; }
 
 .react-autosuggest__suggestion--highlighted {
+  padding: 10px 10px 20px 10px; }
+
+.link-text {
   color: #116193;
-  border-radius: 7px; }
+  font-size: 1.2em; }
 
 .result-text {
   line-height: 22px;

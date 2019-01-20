@@ -77,7 +77,11 @@ class SearchBar extends Component {
   };
 
   renderSuggestion = suggestion => (
-    <Link to={`/search/${suggestion.id}`} style={{ textDecoration: "none" }}>
+    <Link
+      className="link-text"
+      to={`/search/${suggestion.id}`}
+      style={{ textDecoration: "none" }}
+    >
       <img
         className="result-poster"
         src={
