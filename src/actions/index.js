@@ -78,7 +78,7 @@ export function searchMovieList(keyword) {
 }
 
 export function getMovieDetails(movieId) {
-  const urlMovieDetails = `${URL_MOVIE_DETAIL}${movieId}${API_KEY}&language=pt-BR`;
+  const urlMovieDetails = `${URL_MOVIE_DETAIL}${movieId}${API_KEY}&language=pt-BR&append_to_response=videos`;
   return async function(dispatch) {
     dispatch(getMovie());
     try {
