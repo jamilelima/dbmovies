@@ -75,7 +75,7 @@
 .info-items-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   margin: 20px 40px 20px 40px;
@@ -94,6 +94,9 @@
     color: #686868;
     font-weight: 600;
     font-size: 1.4em;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 5px;
   }
 }
 

@@ -14,6 +14,7 @@ import CircleInfo from "../CircleInfo";
 import Header from "../Header";
 import "../../styles/body.scss";
 import ReactPlayer from "react-player";
+import { relative } from "upath";
 
 class MovieDetailsCard extends Component {
   componentDidMount() {
@@ -151,7 +152,10 @@ class MovieDetailsCard extends Component {
                 <CircleInfo avarage={vote_average} nameOfClass="big_circle" />
               </div>
             </div>
-            <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="" />
+            <img
+              src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`}
+              alt="Movie poster"
+            />
           </div>
           <div className="player-wrapper">
             <ReactPlayer url={movieTrailerUrl} />
