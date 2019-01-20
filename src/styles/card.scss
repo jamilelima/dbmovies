@@ -50,7 +50,7 @@
 }
 
 .movie-details-genres {
-  margin: 80px 40px 20px 40px;
+  margin: 60px 40px 20px 0px;
 }
 
 .info-items-container {
@@ -73,6 +73,13 @@
     font-weight: 600;
     font-size: 1.4em;
   }
+}
+
+.movie-info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px 0px 0px;
 }
 
 iframe {
