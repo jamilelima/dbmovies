@@ -1,6 +1,8 @@
 // CORE
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 // HELPERS
 import Autosuggest from "react-autosuggest";
@@ -75,7 +77,7 @@ class SearchBar extends Component {
   };
 
   renderSuggestion = suggestion => (
-    <a>
+    <Link to={`/search/${suggestion.id}`}>
       <img
         className="result-poster"
         src={
@@ -89,7 +91,7 @@ class SearchBar extends Component {
         <div className="search-result-name">{suggestion.title}</div>
         {suggestion.year}
       </div>
-    </a>
+    </Link>
   );
 
   onSuggestionSelected = (event, { suggestion, method }) => {
@@ -97,7 +99,9 @@ class SearchBar extends Component {
     if (method === "enter") event.preventDefault();
     dispatch(getMovieDetails(suggestion.id));
     this.setState({ value: "" });
+    this.props.history.push(`/search/${suggestion.id}`);
   };
+
   render() {
     const { value, suggestions } = this.state;
 
@@ -121,7 +125,9 @@ class SearchBar extends Component {
   }
 }
 
-export default connect(
-  null,
-  null
-)(SearchBar);
+export default withRouter(
+  connect(
+    null,
+    null
+  )(SearchBar)
+);
