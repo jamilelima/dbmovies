@@ -14,13 +14,15 @@
   padding: 10px;
   > .movie-title-text {
     color: $primary-color;
+    font-family: $title-font;
     font-weight: 500;
     font-size: 2.75em;
     margin-left: 1em;
   }
   > .formatted-release-date {
     font-size: 1.75em;
-    color: #999999;
+    color: $font-color-light;
+    font-family: $text-font;
   }
   @media screen and (max-width: 1200px) {
     flex-wrap: wrap;
@@ -33,7 +35,7 @@
 .info-container {
   display: flex;
   flex-direction: row;
-  background-color: #f2f2f2;
+  background-color: $bg-movie-detail;
   @media screen and (max-width: 1200px) {
     flex: 1;
     flex-wrap: wrap;
@@ -43,6 +45,8 @@
 
 .overview-container {
   padding: 20px;
+  flex: 1;
+  flex-wrap: wrap;
   @media screen and (max-width: 1200px) {
     flex: 1;
     flex-wrap: wrap;
@@ -52,17 +56,21 @@
 
 .overview-title {
   color: $primary-color;
-  font-size: 2em;
+  font-family: $title-font;
+  font-size: 2.5em;
   font-weight: 300;
   margin: 20px 40px 20px 40px;
-  border-bottom: 3px solid $font-primary-color;
+  border-bottom: 3px solid $font-color-accent;
 }
 
 .movie-details-overview-text {
+  font-size: 1.5em;
+  font-weight: 550;
+  color: $font-color-dark;
+  font-family: $text-font;
   text-align: justify;
-  font-size: 1.4em;
+  flex-wrap: wrap;
   margin: 20px 40px 20px 40px;
-  color: #686868; //@TODO: Verificar se essa cor é a mesma das outras info
 }
 
 .movie-details-genres {
@@ -75,12 +83,13 @@
 .info-items-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   margin: 20px 40px 20px 40px;
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -88,10 +97,13 @@
   flex-direction: row;
   & > h6 {
     color: $primary-color;
+    font-family: $title-font;
+    font-weight: 500;
     font-size: 2em;
   }
   & > span {
-    color: #686868;
+    color: $font-color-dark;
+    font-family: $text-font;
     font-weight: 600;
     font-size: 1.4em;
   }
@@ -104,7 +116,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 20px 0px 0px;
+  padding: 30px 20px 10px 0px;
   @media screen and (max-width: 1200px) {
     flex-wrap: wrap;
     flex-direction: column;

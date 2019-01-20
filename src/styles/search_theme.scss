@@ -12,12 +12,12 @@
   padding: 15px;
   width: 70%;
   font-family: $title-font;
-  font-size: 20px;
+  font-size: 1.4em;
   border: none;
   border-radius: 25px;
   outline: none;
   color: $primary-color;
-  background-color: #ebebeb;
+  background-color: $bg-color;
 }
 
 .react-autosuggest__input::placeholder {
@@ -47,7 +47,7 @@
 
 .react-autosuggest__suggestions-list {
   list-style-type: none;
-  font-family: "Nunito", sans-serif;
+  font-family: $text-font;
 }
 
 .react-autosuggest__suggestion {

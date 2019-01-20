@@ -26,8 +26,9 @@
 .title-text {
   margin-left: 100px;
   padding: 10px;
-  color: $font-primary-color;
-  font-size: 2.25em;
+  color: $font-color-accent;
+  font-family: $title-font;
+  font-size: 2.75em;
   font-weight: 400;
 }
 
@@ -38,12 +39,16 @@
 
 .release-date-text {
   font-size: 1.75em;
-  color: #999999;
+  color: $font-color-light;
+  font-family: $text-font;
   margin: 0.2em 0 0 120px;
 }
 
 .overview-text {
   font-size: 1.4em;
+  font-weight: 500;
+  color: $font-color-dark;
+  font-family: $text-font;
   margin-bottom: 50px;
 }
 
@@ -75,6 +80,8 @@
   margin: 10px 10px 10px 0px;
   padding: 10px;
   color: $primary-color;
+  font-family: $title-font;
+  font-size: 1.2em;
   background-color: #fff;
   border-radius: 35px;
   border: 2px solid $primary-color;
