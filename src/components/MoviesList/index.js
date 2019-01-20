@@ -6,7 +6,8 @@ import { getPopularMoviesList } from "../../actions";
 class MoviesList extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getPopularMoviesList(1));
+    const randomNumber = this.returnRandomNumber();
+    dispatch(getPopularMoviesList(randomNumber));
   }
 
   renderMovieItem = movies => {
@@ -16,6 +17,11 @@ class MoviesList extends Component {
         return <MovieItem key={key} index={key} movieData={movieData} />;
       });
     }
+  };
+
+  returnRandomNumber = () => {
+    const randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 10;
+    return randomNumber;
   };
 
   render() {
