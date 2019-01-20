@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { getMovieDetails } from "../actions";
 import MovieItem from "./MoviesList/components/MovieItem";
+import "../styles/main.scss";
 
 const favoriteMovies = [
   297802,

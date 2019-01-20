@@ -14,6 +14,87 @@ body {
 p {
   font-family: "Lato", sans-serif; }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  background-color: #116193;
+  justify-content: center;
+  padding: 10px; }
+  .header-content > a {
+    text-decoration: none; }
+
+.header-title {
+  color: #00e8e4;
+  font-weight: 400;
+  font-size: 2.75em; }
+
+.react-autosuggest__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px; }
+
+.react-autosuggest__input {
+  padding: 15px;
+  width: 70%;
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  color: #116193;
+  background-color: #ebebeb; }
+
+.react-autosuggest__input::placeholder {
+  color: #116193; }
+
+.react-autosuggest__input--focused {
+  outline: none; }
+
+.react-autosuggest__input--open {
+  border-radius: 20px;
+  border-radius: 25px;
+  width: 70%; }
+
+.react-autosuggest__suggestions-container--open {
+  position: absolute;
+  border: 1px solid #116193;
+  background-color: #ebebeb;
+  font-weight: 300;
+  font-size: 16px;
+  border-radius: 20px;
+  z-index: 999;
+  width: 70%;
+  top: 22%; }
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
+  font-family: "Nunito", sans-serif; }
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px; }
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #116193;
+  color: #00e8e4;
+  border-radius: 20px; }
+
+.searchResult-text {
+  line-height: 21px;
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap; }
+
+.searchResult-name {
+  font-weight: bold; }
+
+.searchResult-link {
+  display: block;
+  padding: 5px;
+  text-decoration: none; }
+
 .movie-details-container {
   display: flex;
   flex-direction: column; }
@@ -110,26 +191,6 @@ iframe {
   background: #116193;
   box-shadow: 0 0 0 10px #00e8e4; }
 
-nav {
-  padding: 10px;
-  margin-top: 20px; }
-  @media screen and (max-width: 500px) {
-    nav {
-      align-content: center;
-      justify-content: center; } }
-
-.logo-container {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  padding: 10px;
-  background-color: #116193; }
-
-.logo-container > h1 {
-  color: #00e8e4;
-  font-size: 3rem;
-  font-weight: 100; }
-
 .container {
   display: flex;
   margin: 0 auto;
@@ -172,11 +233,12 @@ nav {
 @media screen and (max-width: 1280px) {
   .card-content {
     flex: 1;
+    margin: 0 auto;
     flex-direction: column; } }
 
 @media screen and (max-width: 800px) {
-  body {
-    display: flex; }
+  .container {
+    margin: 0 auto; }
   .card-content {
     flex: 1;
     flex-direction: column; } }
@@ -192,72 +254,6 @@ nav {
   background-color: #fff;
   border-radius: 35px;
   border: 2px solid #116193; }
-
-.react-autosuggest__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
-
-.react-autosuggest__input {
-  padding: 15px;
-  width: 70%;
-  font-family: "Abel", sans-serif;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  color: #116193;
-  background-color: #ebebeb; }
-
-.react-autosuggest__input::placeholder {
-  color: #116193; }
-
-.react-autosuggest__input--focused {
-  outline: none; }
-
-.react-autosuggest__input--open {
-  border-radius: 20px;
-  border-radius: 25px;
-  width: 70%; }
-
-.react-autosuggest__suggestions-container--open {
-  position: absolute;
-  border: 1px solid #116193;
-  background-color: #ebebeb;
-  font-weight: 300;
-  font-size: 16px;
-  border-radius: 20px;
-  z-index: 999;
-  width: 70%;
-  top: 17%; }
-
-.react-autosuggest__suggestions-list {
-  list-style-type: none;
-  font-family: "Nunito", sans-serif; }
-
-.react-autosuggest__suggestion {
-  cursor: pointer;
-  padding: 10px 20px; }
-
-.react-autosuggest__suggestion--highlighted {
-  background-color: #116193;
-  color: #00e8e4;
-  border-radius: 20px; }
-
-.searchResult-text {
-  line-height: 21px;
-  overflow: hidden;
-  text-align: left;
-  white-space: nowrap; }
-
-.searchResult-name {
-  font-weight: bold; }
-
-.searchResult-link {
-  display: block;
-  padding: 5px;
-  text-decoration: none; }
 
 .footer-container {
   display: flex;

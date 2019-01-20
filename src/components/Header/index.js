@@ -5,11 +5,11 @@ import "../../styles/header.scss";
 
 const Header = () => {
   return (
-    <div className="logo-container">
+    <header className="header-content">
       <a href="/">
         <h1 className="header-title">Movies</h1>
       </a>
-    </div>
+    </header>
   );
 };
 

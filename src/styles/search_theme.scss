@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .react-autosuggest__input {
@@ -42,7 +43,7 @@
   border-radius: 20px;
   z-index: 999;
   width: 70%;
-  top: 17%;
+  top: 22%;
 }
 
 .react-autosuggest__suggestions-list {
