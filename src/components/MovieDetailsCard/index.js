@@ -14,12 +14,15 @@ import CircleInfo from "../CircleInfo";
 import Header from "../Header";
 import "../../styles/body.scss";
 import ReactPlayer from "react-player";
+import ReactDom from "react-dom";
 
 class MovieDetailsCard extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     const { movieId } = this.props.match.params;
     dispatch(getMovieDetails(movieId));
+    // @TODO: Find a better way to do this -> Prevent scroll "jump"
+    ReactDom.findDOMNode(this).scrollIntoView();
   }
 
   translateMovieStatus = status => {
