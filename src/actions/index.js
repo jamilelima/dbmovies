@@ -2,6 +2,7 @@
 
 import {
   URL_MOVIES_SEARCH,
+  URL_POLULAR_MOVIES_SEARCH,
   URL_MOVIE_DETAIL,
   API_KEY,
   API_KEY_ALT
@@ -15,6 +16,9 @@ export const SEARCH_MOVIE_FAILURE = "SEARCH_MOVIE_FAILURE";
 export const GET_MOVIE = "GET_MOVIE";
 export const GET_MOVIE_SUCCESS = "GET_MOVIE_SUCCESS";
 export const GET_MOVIE_FAILURE = "GET_MOVIE_FAILURE";
+export const GET_POPULAR_MOVIES = "GET_POPULAR_MOVIES";
+export const GET_POPULAR_MOVIES_SUCCESS = "GET_POPULAR_MOVIES_SUCCESS";
+export const GET_POPULAR_MOVIES_FAILURE = "GET_MOVIE_FAILURE";
 
 // PURE FUNCTIONS
 
@@ -60,6 +64,26 @@ function getMovieFailure(error) {
   };
 }
 
+function getPopularMovies() {
+  return {
+    type: GET_POPULAR_MOVIES
+  };
+}
+
+function getPopularMoviesSuccess(data) {
+  return {
+    type: GET_POPULAR_MOVIES_SUCCESS,
+    data
+  };
+}
+
+function getPopularMoviesFailure(error) {
+  return {
+    type: GET_POPULAR_MOVIES_FAILURE,
+    error
+  };
+}
+
 // SERVICE API
 
 export function searchMovieList(keyword) {
@@ -87,6 +111,21 @@ export function getMovieDetails(movieId) {
       return dispatch(getMovieSuccess(data));
     } catch (error) {
       return dispatch(getMovieFailure(error));
+    }
+  };
+}
+
+export function getPopularMoviesList(pageNumber) {
+  let url = `${URL_POLULAR_MOVIES_SEARCH}${API_KEY}&language=pt-BR&page=${pageNumber}`;
+  return async function(dispatch) {
+    dispatch(getPopularMovies());
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      const data = json.results;
+      return dispatch(getPopularMoviesSuccess(data));
+    } catch (error) {
+      return dispatch(getPopularMoviesFailure(error));
     }
   };
 }

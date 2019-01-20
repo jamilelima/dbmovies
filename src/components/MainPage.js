@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Header from "./Header";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { getMovieDetails } from "../actions";
+import { getMovieDetails, getPopularMoviesList } from "../actions";
 import MovieItem from "./MoviesList/components/MovieItem";
 import "../styles/main.scss";
 
@@ -25,6 +25,7 @@ class MainPage extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getMovieDetails(this.randomNumbers()));
+    dispatch(getPopularMoviesList(1));
   }
 
   randomNumbers = () => {
@@ -48,7 +49,8 @@ class MainPage extends Component {
 
 function mapStateToProps(state) {
   const { movieData } = state;
-  return { movieData };
+  const { popularMovies } = state.getPopularMovies;
+  return { movieData, popularMovies };
 }
 
 export default connect(mapStateToProps)(MainPage);
