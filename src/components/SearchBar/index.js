@@ -4,7 +4,12 @@ import { connect } from "react-redux";
 
 // HELPERS
 import Autosuggest from "react-autosuggest";
-import { API_KEY_ALT, URL_MOVIES_SEARCH } from "../../utils";
+import {
+  API_KEY_ALT,
+  URL_MOVIES_SEARCH,
+  IMG_SIZE_SMALL,
+  URl_MOVIE_POSTER
+} from "../../utils";
 
 // STYLES
 import "../../styles/header.scss";
@@ -44,6 +49,11 @@ class SearchBar extends Component {
             const movieData = {};
             movieData.id = movie.id;
             movieData.title = movie.title;
+            movieData.image = movie.poster_path;
+            movieData.year =
+              movie.release_date === ""
+                ? "0000"
+                : movie.release_date.substring(0, 4);
             return movieData;
           });
           this.setState({
@@ -65,7 +75,21 @@ class SearchBar extends Component {
   };
 
   renderSuggestion = suggestion => (
-    <div className="search-result-text">{suggestion.title}</div>
+    <a>
+      <img
+        className="result-poster"
+        src={
+          suggestion.image == null
+            ? null
+            : `${URl_MOVIE_POSTER}${IMG_SIZE_SMALL}${suggestion.image}`
+        }
+        alt="Movie Poster"
+      />
+      <div className="result-text">
+        <div className="search-result-name">{suggestion.title}</div>
+        {suggestion.year}
+      </div>
+    </a>
   );
 
   onSuggestionSelected = (event, { suggestion, method }) => {

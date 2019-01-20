@@ -8,6 +8,7 @@ export const API_KEY_ALT = "&api_key=f0ec5dea593ad4b500ce7d88c8dede74";
 export const URl_MOVIE_POSTER = "https://image.tmdb.org/t/p/";
 export const URL_YOUTUBE = "https://www.youtube.com/embed/";
 export const IMG_SIZE = "w342/";
+export const IMG_SIZE_SMALL = "w45/";
 
 // METHODS
 export const getFormattedReleaseDate = release_date => {

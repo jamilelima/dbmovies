@@ -29,21 +29,20 @@
 }
 
 .react-autosuggest__input--open {
-  border-radius: 20px;
-  border-radius: 25px;
+  border-radius: 50px;
   width: 70%;
 }
 
 .react-autosuggest__suggestions-container--open {
   position: absolute;
-  border: 1px solid $primary-color;
+  border: 2px solid $primary-color;
   background-color: $bg-color;
   font-weight: 300;
   font-size: 16px;
   border-radius: 20px;
   z-index: 999;
   width: 70%;
-  top: 22%;
+  top: 20%;
 }
 
 .react-autosuggest__suggestions-list {
@@ -57,24 +56,29 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: $primary-color;
-  color: $font-primary-color;
-  border-radius: 20px;
+  color: $primary-color;
+  border-radius: 7px;
 }
 
-.searchResult-text {
-  line-height: 21px;
+.result-text {
+  line-height: 22px;
   overflow: hidden;
   text-align: left;
   white-space: nowrap;
 }
 
-.searchResult-name {
+.result-poster {
+  width: 50px;
+  height: 60px;
+  float: left;
+  margin-right: 8px;
+}
+
+.search-result-name {
   font-weight: bold;
 }
 
 .searchResult-link {
   display: block;
   padding: 5px;
-  text-decoration: none;
 }
