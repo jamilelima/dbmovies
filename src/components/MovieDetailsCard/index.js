@@ -14,7 +14,6 @@ import CircleInfo from "../CircleInfo";
 import Header from "../Header";
 import "../../styles/body.scss";
 import ReactPlayer from "react-player";
-import { relative } from "upath";
 
 class MovieDetailsCard extends Component {
   componentDidMount() {
