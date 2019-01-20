@@ -17,7 +17,7 @@ class MovieItem extends Component {
       vote_average,
       release_date,
       genres
-    } = this.props.movieData.movie;
+    } = this.props.movieData;
 
     const formattedReleaseDate = getFormattedReleaseDate(release_date);
     const formattedGenre = getFormattedGenre(genres);
