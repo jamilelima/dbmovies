@@ -13,11 +13,11 @@ const CircleInfo = props => {
 
   const avarageInPercent = calculateAndReturnPercent();
 
-  return <div className="circle">{`${avarageInPercent}%`}</div>;
+  return <div className={props.nameOfClass}>{`${avarageInPercent}%`}</div>;
 };
 
 CircleInfo.defaultProps = {
-  avarage: "?"
+  avarage: "0"
 };
 
 export default CircleInfo;
