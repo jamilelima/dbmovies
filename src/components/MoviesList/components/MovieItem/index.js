@@ -28,7 +28,7 @@ class MovieItem extends Component {
           <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="" />
           <div className="card-info">
             <div className="header-container">
-              <Link to={`/movie/${id}`}>
+              <Link to={`/movie/${id}`} style={{ textDecoration: "none" }}>
                 <h1 className="title-text">{title}</h1>
               </Link>
               <CircleInfo avarage={vote_average} nameOfClass="circle" />
