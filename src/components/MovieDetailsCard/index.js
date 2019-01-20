@@ -13,6 +13,7 @@ import { formatMoney } from "../../utils";
 import CircleInfo from "../CircleInfo";
 import Header from "../Header";
 import "../../styles/body.scss";
+import ReactPlayer from "react-player";
 
 class MovieDetailsCard extends Component {
   componentDidMount() {
@@ -152,15 +153,9 @@ class MovieDetailsCard extends Component {
             </div>
             <img src={`${URl_MOVIE_POSTER}${IMG_SIZE}${poster_path}`} alt="" />
           </div>
-          <iframe
-            width="auto"
-            height="720"
-            src={movieTrailerUrl}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Movie trailer"
-          />
+          <div className="player-wrapper">
+            <ReactPlayer url={movieTrailerUrl} />
+          </div>
         </div>
       </Fragment>
     );
