@@ -31,7 +31,7 @@ class MovieItem extends Component {
               <Link to={`/movie/${id}`}>
                 <h1 className="title-text">{title}</h1>
               </Link>
-              <CircleInfo avarage={vote_average} />
+              <CircleInfo avarage={vote_average} nameOfClass="circle" />
             </div>
             <p className="release-date-text">{formattedReleaseDate}</p>
             <div className="movie-details">
