@@ -1,6 +1,6 @@
 /* Core */
 import React, { Component, Fragment } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 
 /* Redux */
 import { Provider, connect } from "react-redux";
@@ -22,7 +22,7 @@ let store = createStore(dbMoviesApp, applyMiddleware(thunk));
 class RootContainerComponent extends Component {
   render() {
     return (
-      <BrowserRouter basename="/dbmovies">
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route
@@ -48,7 +48,7 @@ class RootContainerComponent extends Component {
             )}
           />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
