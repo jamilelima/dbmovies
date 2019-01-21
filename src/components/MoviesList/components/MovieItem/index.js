@@ -45,4 +45,14 @@ class MovieItem extends Component {
   }
 }
 
+MovieItem.defaultProps = {
+  title: "Movie Title",
+  overview:
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium voluptate eligendi eum deserunt! Ullam aut excepturi neque ratione, eveniet rem fugiat quam sit numquam quae eum deserunt dolorum temporibus eius.",
+  poster_path: "https://via.placeholder.com/340x510.png",
+  vote_average: 0,
+  release_date: "Não informado",
+  genres: []
+};
+
 export default MovieItem;

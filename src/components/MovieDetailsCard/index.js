@@ -64,11 +64,42 @@ class MovieDetailsCard extends Component {
   };
 
   convertAndFormatRuntime = runtime => {
-    const hours = runtime / 60;
-    const roundHours = Math.floor(hours);
-    const minutes = (hours - roundHours) * 60;
-    const roundMinutes = Math.round(minutes);
-    return `${roundHours}h ${roundMinutes}min`;
+    if (runtime !== null) {
+      const hours = runtime / 60;
+      const roundHours = Math.floor(hours);
+      const minutes = (hours - roundHours) * 60;
+      const roundMinutes = Math.round(minutes);
+      return `${roundHours}h ${roundMinutes}min`;
+    } else {
+      return "Não informado";
+    }
+  };
+
+  formatBudget = budget => {
+    if (budget) {
+      const formattedBudget = formatMoney.format(budget);
+      return formattedBudget;
+    } else {
+      return "Não informado";
+    }
+  };
+
+  formatRevenue = revenue => {
+    if (revenue) {
+      const formattedRevenue = formatMoney.format(revenue);
+      return formattedRevenue;
+    } else {
+      return "Não informado";
+    }
+  };
+
+  formatProfit = (revenue, budget) => {
+    if (revenue) {
+      const profit = formatMoney.format(revenue - budget);
+      return profit;
+    } else {
+      return "Não informado";
+    }
   };
 
   formatMovieTrailerUrl = movieVideoObj => {
@@ -104,9 +135,9 @@ class MovieDetailsCard extends Component {
     const statusName = this.translateMovieStatus(status);
     const movieLanguage = this.translateMovieLanguage(original_language);
     const movieRuntime = this.convertAndFormatRuntime(runtime);
-    const formattedBudget = formatMoney.format(budget);
-    const formattedRevenue = formatMoney.format(revenue);
-    const profit = formatMoney.format(revenue - budget);
+    const formattedBudget = this.formatBudget(budget);
+    const formattedRevenue = this.formatRevenue(revenue);
+    const formattedProfit = this.formatProfit(revenue, budget);
     const movieTrailerUrl = this.formatMovieTrailerUrl(videos);
 
     return (
@@ -146,7 +177,7 @@ class MovieDetailsCard extends Component {
                 </div>
                 <div className="info-item">
                   <h6>Lucro</h6>
-                  <span>{profit}</span>
+                  <span>{formattedProfit}</span>
                 </div>
               </div>
               <div className="movie-info-footer">
@@ -167,6 +198,22 @@ class MovieDetailsCard extends Component {
     );
   }
 }
+
+MovieDetailsCard.defaultProps = {
+  title: "Movie Title",
+  overview:
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium voluptate eligendi eum deserunt! Ullam aut excepturi neque ratione, eveniet rem fugiat quam sit numquam quae eum deserunt dolorum temporibus eius.",
+  poster_path: "https://via.placeholder.com/340x510.png",
+  vote_average: 0,
+  runtime: 0,
+  budget: 0,
+  revenue: 0,
+  status: "",
+  release_date: "Não informado",
+  genres: [],
+  original_language: "",
+  videos: ""
+};
 
 function mapStateToProps(state) {
   const { movieData } = state;
