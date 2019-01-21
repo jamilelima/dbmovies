@@ -1,13 +1,13 @@
 {
-  "main.css": "/dbmovies/static/css/main.1d0c2f51.chunk.css",
-  "main.js": "/dbmovies/static/js/main.d3667f03.chunk.js",
-  "main.js.map": "/dbmovies/static/js/main.d3667f03.chunk.js.map",
+  "main.css": "/dbmovies/static/css/main.bb21cdce.chunk.css",
+  "main.js": "/dbmovies/static/js/main.520a94a7.chunk.js",
+  "main.js.map": "/dbmovies/static/js/main.520a94a7.chunk.js.map",
   "static/js/1.443bf71f.chunk.js": "/dbmovies/static/js/1.443bf71f.chunk.js",
   "static/js/1.443bf71f.chunk.js.map": "/dbmovies/static/js/1.443bf71f.chunk.js.map",
   "runtime~main.js": "/dbmovies/static/js/runtime~main.d810e176.js",
   "runtime~main.js.map": "/dbmovies/static/js/runtime~main.d810e176.js.map",
-  "static/css/main.1d0c2f51.chunk.css.map": "/dbmovies/static/css/main.1d0c2f51.chunk.css.map",
+  "static/css/main.bb21cdce.chunk.css.map": "/dbmovies/static/css/main.bb21cdce.chunk.css.map",
   "index.html": "/dbmovies/index.html",
-  "precache-manifest.b77f3c6f1327b9b74039b53ea887db9d.js": "/dbmovies/precache-manifest.b77f3c6f1327b9b74039b53ea887db9d.js",
+  "precache-manifest.78d550d33b2ec08bc56cd03aa44e3552.js": "/dbmovies/precache-manifest.78d550d33b2ec08bc56cd03aa44e3552.js",
   "service-worker.js": "/dbmovies/service-worker.js"
 }
