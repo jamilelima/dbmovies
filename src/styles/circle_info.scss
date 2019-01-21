@@ -1,0 +1,30 @@
+@import "../styles/variables.scss";
+
+.circle {
+  position: absolute;
+  margin-top: -30px;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 1.75em;
+  color: $font-color-accent;
+  font-family: $title-font;
+  line-height: 80px;
+  text-align: center;
+  background: $primary-color;
+  box-shadow: 0 0 0 5px $font-color-accent;
+}
+
+.big_circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 70%;
+  font-size: 2.75em;
+  color: $font-color-accent;
+  font-family: $title-font;
+  line-height: 150px;
+  text-align: center;
+  background: $primary-color;
+  box-shadow: 0 0 0 10px $font-color-accent;
+}

@@ -1,14 +1,19 @@
-nav {
+@import "./variables.scss";
+
+.header-content {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  background-color: $primary-color;
+  justify-content: center;
   padding: 10px;
-  @media screen and (max-width: 500px) {
-    flex-wrap: wrap;
+  & > a {
+    text-decoration: none;
   }
 }
 
-.logo > h1 {
-  color: #CCC;
-  font-size: 2em;
+.header-title {
+  color: $font-color-accent;
+  font-weight: 400;
+  font-size: 2.75em;
+  font-family: $title-font;
 }

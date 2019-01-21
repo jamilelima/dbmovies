@@ -1,0 +1,88 @@
+@import "../styles/variables.scss";
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  margin: 100px 300px 100px 300px;
+  position: relative;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  background-color: $bg-color;
+}
+
+.card-info {
+  flex: 1;
+  -moz-box-flex: 1;
+}
+
+.header-container {
+  background-color: $primary-color;
+  padding: 15px 15px 0 15px;
+}
+
+.title-text {
+  margin-left: 100px;
+  padding: 10px;
+  color: $font-color-accent;
+  font-family: $title-font;
+  font-size: 2.75em;
+  font-weight: 400;
+}
+
+.movie-details {
+  flex: 1;
+  padding: 40px 70px 0 30px;
+}
+
+.release-date-text {
+  font-size: 1.75em;
+  color: $font-color-light;
+  font-family: $text-font;
+  margin: 0.2em 0 0 120px;
+}
+
+.overview-text {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: $font-color-dark;
+  font-family: $text-font;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+  .card-content {
+    flex: 1;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    margin: 10px 0px 0px auto;
+  }
+  .card-content {
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.genre-list-container {
+  display: flex;
+}
+
+.genre-item {
+  list-style: none;
+  display: inline;
+  margin: 10px 10px 10px 0px;
+  padding: 10px;
+  color: $primary-color;
+  font-family: $title-font;
+  font-size: 1.2em;
+  background-color: #fff;
+  border-radius: 35px;
+  border: 2px solid $primary-color;
+}

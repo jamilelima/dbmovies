@@ -1,97 +1,139 @@
-.movie-poster {
-  width: 100%;
-}
+@import "./variables.scss";
 
 .movie-details-container {
   display: flex;
-  background-color: #e6e6e6;
-  margin: 4em auto;
-  max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);  
-  -webkit-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 56px -6px rgba(0,0,0,0.75);
-  @media screen and (max-width: 800px) {
-    max-width: 500px;
+  flex-direction: column;
+}
+
+.movie-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg-color;
+  padding: 10px;
+  > .movie-title-text {
+    color: $primary-color;
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 2.75em;
+    margin-left: 1em;
+  }
+  > .formatted-release-date {
+    font-size: 1.75em;
+    color: $font-color-light;
+    font-family: $text-font;
+  }
+  @media screen and (max-width: 1200px) {
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .info-container {
-  padding: 1.25em 1.5em;
+  display: flex;
+  flex-direction: row;
+  background-color: $bg-movie-detail;
+  @media screen and (max-width: 1200px) {
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
-.info-container ul {
-  list-style: none;
-  margin: 0.5em 0 0;
-  padding: 0;
+.overview-container {
+  padding: 20px;
+  flex: 1;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1200px) {
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
-.info-container ul li {
-  display: inline-block;
-  margin-left: 1em;
-  line-height: 1em;
-}
-
-.info-container ul li:first-child {
-  margin-left: 0;
-}
-
-.info-container ul li .icon {
-  vertical-align: bottom;
-}
-
-.info-container ul li span:nth-of-type(2) {
-  margin-left: 0.5em;
-  font-size: 0.8em;
+.overview-title {
+  color: $primary-color;
+  font-family: $title-font;
+  font-size: 2.5em;
   font-weight: 300;
-  vertical-align: middle;
-  color: #838689;
+  margin: 20px 40px 20px 40px;
+  border-bottom: 3px solid $font-color-accent;
 }
 
-.info-container h2, .info-container h3 {
-  margin: 0;
-  font-weight: 300;
+.movie-details-overview-text {
+  font-size: 1.5em;
+  font-weight: 550;
+  color: $font-color-dark;
+  font-family: $text-font;
+  text-align: justify;
+  flex-wrap: wrap;
+  margin: 20px 40px 20px 40px;
 }
 
-.info-container h2 {
-  font-size: 1.75em;
-  font-family: 'Titillium Web', sans-serif;
-  color: #50505a;
+.movie-details-genres {
+  margin: 40px 40px 20px 40px;
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 40px 0;
+  }
 }
 
-.info-container h3 {
-  font-size: 0.9375em;
-  font-family: 'Titillium Web', sans-serif;
-  color: #78788c;
+.info-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 20px 40px 20px 40px;
+  @media (max-width: 1200px) {
+    margin: 0px;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
-.info-container p {
-  margin: 1.25em 0;
-  font-size: 0.8125em;
-  font-weight: 400;
-  color: #50505a;
+.info-item {
+  flex-direction: row;
+  & > h6 {
+    color: $primary-color;
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 2em;
+  }
+  & > span {
+    color: $font-color-dark;
+    font-family: $text-font;
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 5px;
+  }
 }
 
-.info-container p span {
-  font-weight: 700;
-  color: #50505a;
+.movie-info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px 10px 0px;
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+  }
 }
 
-.info-container .ingrediengenrests {
-  margin: 2em 0 0.5em;
-}
-.movie-details-container .icon {
-  display: inline;
-  display: inline-block;
-  background-repeat: no-repeat;
-}
-
-.imdb-icon, .more-info-icon {
-  padding: 5px;
-  font-size: 36px;
-  color: #A4A4A4;
-}
-.imdb-icon:hover, .more-info-icon:hover {
-  color: #213f53;
+.player-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
