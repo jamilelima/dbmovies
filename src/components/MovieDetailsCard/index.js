@@ -200,19 +200,21 @@ class MovieDetailsCard extends Component {
 }
 
 MovieDetailsCard.defaultProps = {
-  title: "Movie Title",
-  overview:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium voluptate eligendi eum deserunt! Ullam aut excepturi neque ratione, eveniet rem fugiat quam sit numquam quae eum deserunt dolorum temporibus eius.",
-  poster_path: "https://via.placeholder.com/340x510.png",
-  vote_average: 0,
-  runtime: 0,
-  budget: 0,
-  revenue: 0,
-  status: "",
-  release_date: "Não informado",
-  genres: [],
-  original_language: "",
-  videos: ""
+  movieData: {
+    title: "Movie Title",
+    overview:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium voluptate eligendi eum deserunt! Ullam aut excepturi neque ratione, eveniet rem fugiat quam sit numquam quae eum deserunt dolorum temporibus eius.",
+    poster_path: "https://via.placeholder.com/340x510.png",
+    vote_average: 0,
+    runtime: 0,
+    budget: 0,
+    revenue: 0,
+    status: "",
+    release_date: "Não informado",
+    genres: [],
+    original_language: "",
+    videos: ""
+  }
 };
 
 function mapStateToProps(state) {
