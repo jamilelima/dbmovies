@@ -22,7 +22,7 @@ let store = createStore(dbMoviesApp, applyMiddleware(thunk));
 class RootContainerComponent extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/dbmovies">
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route
