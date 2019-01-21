@@ -182,7 +182,7 @@ class MovieDetailsCard extends Component {
               </div>
               <div className="movie-info-footer">
                 <ul className="movie-details-genres">{formattedGenre}</ul>
-                <CircleInfo avarage={vote_average} nameOfClass="big_circle" />
+                <CircleInfo average={vote_average} nameOfClass="big_circle" />
               </div>
             </div>
             <img
