@@ -1,13 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { URl_MOVIE_POSTER, IMG_SIZE } from "../../../../utils";
 import CircleInfo from "../../../CircleInfo";
 
 import { getFormattedReleaseDate, getFormattedGenre } from "../../../../utils";
 import "../../../../styles/movie_item.scss";
+import { getMovieDetails } from "../../../../actions";
 
 class MovieItem extends Component {
+  componentDidMount() {
+    this.handleRequestMovieDetails();
+  }
+
+  handleRequestMovieDetails = () => {
+    if (this.props.match) {
+      const { movieId } = this.props.match.params;
+      const { dispatch } = this.props;
+      dispatch(getMovieDetails(movieId));
+    } else {
+      return null;
+    }
+  };
+
   render() {
     const {
       id,
@@ -55,4 +71,7 @@ MovieItem.defaultProps = {
   genres: []
 };
 
-export default MovieItem;
+export default connect(
+  null,
+  null
+)(MovieItem);
