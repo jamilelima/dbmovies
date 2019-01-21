@@ -165,6 +165,10 @@ body {
   margin: 40px 40px 20px 40px; }
   @media screen and (max-width: 1200px) {
     .movie-details-genres {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       margin: 0 0 40px 0; } }
 
 .info-items-container {
@@ -176,6 +180,7 @@ body {
   margin: 20px 40px 20px 40px; }
   @media (max-width: 1200px) {
     .info-items-container {
+      margin: 0px;
       flex-direction: column;
       justify-content: center; } }
 
